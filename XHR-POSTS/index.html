@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST CARD WITH XHR HTTP METHODS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(220, 133, 20);
+        }
+
+        .card {
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .card-header h4 {
+            height: 40px;
+            overflow: hidden;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center my-4 d-none" id="spinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div>
+                <div class="card h-100">
+                    <h2 class="text-center" style="color: crimson;">POST FORM</h2>
+                    <div class="card-body">
+                        <form id="postForm">
+                            <div class="form-group">
+                                <label for="title">TITLE*</label>
+                                <input type="text" name="title" id="title" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="content">DESCRIPTION*</label>
+                                <textarea name="content" id="body" rows="" class="form-control"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userId">USERID*</label>
+
+                                <select name="userId" id="userId" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                <br>
+                                <button id="addpostbtn" type="submit" class="btn btn-outline-primary form-control">POST
+                                    ADD BTN</button>
+
+                                <button id="updatepostbtn" type="button"
+                                    class="d-none btn btn-outline-warning form-control">POST
+                                    UPDATE BTN</button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+
+        <div class="row" id="postContainer">
+            <!-- <div class="col-md-4 offset-md-3">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h2 class="text-center">POST CARD</h2>
+                    </div>
+                    <div class="card-body mb-4">
+                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eius delectus
+                            maxime at porro
+                            quidem animi optio aliquam officia soluta recusandae magnam alias consectetur perspiciatis
+                            vel ipsa quisquam cumque quod adipisci maiores, rerum enim debitis ut veritatis. Illum
+                            consequuntur eos optio amet aliquid similique. Voluptatem unde hic iure reiciendis dolore
+                            cupiditate corrupti ipsa libero laboriosam fugit.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <button class="btn btn-sm btn-outline-primary">EDIT</button>
+                        <button class="btn btn-sm btn-outline-danger">REMOVE</button>
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
