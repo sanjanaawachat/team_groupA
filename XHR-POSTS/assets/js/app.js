@@ -1,4 +1,4 @@
-// ================== ELEMENTS ==================
+
 let spinner = document.getElementById('spinner');
 let postForm = document.getElementById('postForm');
 let titleControl = document.getElementById('title');
@@ -9,11 +9,10 @@ let postContainer = document.getElementById('postContainer');
 let addpostbtn = document.getElementById('addpostbtn');
 let updatepostbtn = document.getElementById('updatepostbtn');
 
-// ================== URL ==================
 let BASE_URL = `https://jsonplaceholder.typicode.com`;
 let POST_URL = `${BASE_URL}/posts`;
 
-// ================== TOAST ==================
+
 function showToast(message, iconType) {
     const Toast = Swal.mixin({
         toast: true,
@@ -28,7 +27,6 @@ function showToast(message, iconType) {
     });
 }
 
-// ================== SPINNER ==================
 function showSpinner() {
     spinner.classList.remove('d-none');
 }
@@ -36,7 +34,7 @@ function hideSpinner() {
     spinner.classList.add('d-none');
 }
 
-// ================== CREATE CARDS ==================
+
 function createCards(arr) {
 
     let result = '';
@@ -68,7 +66,6 @@ function createCards(arr) {
     postContainer.innerHTML = result;
 }
 
-// ================== READ ==================
 function fetchData() {
     showSpinner();
 
@@ -89,9 +86,9 @@ function fetchData() {
     xhr.send();
 }
 
-// ================== CREATE ==================
-function onPostSubmit(e) {
-    e.preventDefault();
+
+function onPostSubmit(eve) {
+    eve.preventDefault();
 
     showSpinner();
 
@@ -144,7 +141,7 @@ function onPostSubmit(e) {
     xhr.send(JSON.stringify(postObj));
 }
 
-// ================== EDIT ==================
+
 function onEdit(ele) {
 
     showSpinner();
@@ -181,7 +178,6 @@ function onEdit(ele) {
     xhr.send();
 }
 
-// ================== UPDATE ==================
 function onUpdate() {
 
     let updatedId = localStorage.getItem('EditId');
@@ -196,8 +192,10 @@ function onUpdate() {
     let updatedObj = {
         title: titleControl.value,
         body: contentControl.value,
-        userId: userIdControl.value
+        userId: userIdControl.value,
+        id: updatedId
     };
+    console.log(updatedObj);
 
     let url = `${BASE_URL}/posts/${updatedId}`;
 
@@ -234,7 +232,6 @@ function onUpdate() {
     xhr.send(JSON.stringify(updatedObj));
 }
 
-// ================== DELETE ==================
 function onRemove(ele) {
 
     Swal.fire({
