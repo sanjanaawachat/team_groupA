@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(220, 133, 20);
+}
+
+.card {
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.card-header h4 {
+    height: 40px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
